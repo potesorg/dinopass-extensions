@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Dinopass generator",
+  "description": "Chrome extension used to generate a new strong password using the DinoPass API",
+  "version": "0.1.0",
+
+  "permissions": ["<all_urls>"],
+
+  "browser_action": {
+    "default_popup": "index.html"
+  }
+}
