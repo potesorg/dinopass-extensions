@@ -9,9 +9,7 @@ loading.style.display = "none";
 errors.textContent = "";
 // grab the form
 const form = document.querySelector(".form-data");
-// grab the country name
 
-// declare a method to search by country name
 const generateStrongPass = async () => {
   loading.style.display = "block";
   // errors.textContent = "";
@@ -42,29 +40,33 @@ blocks.forEach((block) => {
   // only add button if browser supports Clipboard API
   if (navigator.clipboard) {
     let br = document.createElement("span");
+    // spacing
     br.innerHTML = "<br/>";
     let button = document.createElement("button");
+    // buttons css described in dist/sstyles.css
     button.classList.add("ui");
 
     button.innerText = copyButtonLabel;
+    // append the button and the section
     br.appendChild(button);
-
     block.appendChild(br);
+    // add the button event listener
     button.addEventListener("click", async () => {
-      await copyCode(block, button);
+      await copyPass(block, button);
     });
   }
 });
 
-async function copyCode(block, button) {
-  let code = block.querySelector("span.pass");
-  let text = code.innerText;
+async function copyPass(block, button) {
+  let pass = block.querySelector("span.pass");
+  let text = pass.innerText;
 
   await navigator.clipboard.writeText(text);
 
   // visual feedback that task is completed
   button.innerText = "Copied to clipboard";
 
+  // show text and then reset
   setTimeout(() => {
     button.innerText = copyButtonLabel;
   }, 700);

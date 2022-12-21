@@ -1,7 +1,7 @@
 {
   "name": "dinopass-extension",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chrome extension for calling the DinoPass API and generate strong passwords.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,9 @@
     "build": "webpack"
   },
   "keywords": [
-    "chrome extension"
+    "chrome extension",
+    "dinopass",
+    "password"
   ],
   "author": "Andrei Tuta",
   "license": "ISC",
